@@ -1,0 +1,142 @@
+<meta name='viewport' content='width=device-width, initial-scale=1'/><!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>To whome it may Concern </title>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Open Sans', sans-serif;
+      background: linear-gradient(to top, #0a0a0a, #1c1c2d);
+      color: white;
+      overflow-x: hidden;
+    }
+
+    .container {
+      height: 100vh;
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      text-align: center;
+    }
+
+    .letter-btn, .close-btn {
+      font-size: 4rem;
+      background: none;
+      border: none;
+      cursor: pointer;
+      animation: float 2s infinite ease-in-out;
+      transition: transform 0.3s ease;
+      margin: 10px;
+    }
+
+    .letter-btn:hover, .close-btn:hover {
+      transform: scale(1.1);
+    }
+
+    .click-text {
+      margin-top: 10px;
+      font-size: 1rem;
+      color: #ccc;
+      font-style: italic;
+    }
+
+    .letter {
+      max-width: 90%;
+      margin: 100px auto 40px auto;
+      padding: 20px;
+      background-color: rgba(255, 255, 255, 0.05);
+      border-radius: 10px;
+      line-height: 1.8;
+      display: none;
+    }
+
+    .close-section {
+      text-align: center;
+      display: none;
+      margin-bottom: 50px;
+    }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <button class="letter-btn" onclick="showLetter()">✉️</button>
+    <div class="click-text">Click to read the letter ↖️</div>
+  </div>
+
+  <div class="letter" id="letter">
+   <p> <h3>To Whom It May Concern</h3>
+
+This project serves as a demonstration of my ability to integrate front-end development skills with creative presentation.<br> The structure, animations, and interactive elements are designed to simulate a digital letter experience, showcasing both technical proficiency and user-centered design.<br><br>
+
+The intent behind this work is to highlight how storytelling can be enhanced through web development -- using HTML, CSS, and JavaScript to create a responsive and
+engaging interface. While the content of the
+letter is placeholder text, the overall project
+reflects a blend of aesthetics, functionality,
+and adaptability.<br><br>
+
+This project was independently<br>
+conceptualized, designed, and developed as<br>
+part of my self-learning journey in front-end <br>
+development.<br><br>
+
+
+Sincerely,<br>
+Adityanshu Sahu<br>
+(Front-End Development Enthusiast)<br><br>
+
+</p>
+  </div>
+
+  <div class="close-section" id="closeBtn">
+    <button class="close-btn" onclick="closeTab()">✉️</button>
+    <div class="click-text">Click to close the letter ↘️</div>
+  </div>
+
+  <script>
+    function showLetter() {
+      document.getElementById("letter").style.display = "block";
+      document.getElementById("closeBtn").style.display = "block";
+      window.scrollTo({
+        top: document.getElementById("letter").offsetTop,
+        behavior: "smooth"
+      });
+    }
+
+    function closeTab() {
+      window.open('', '_self', '');
+      window.close();
+    }
+  </script>
+</body>
+</html><script>function showLetter() {
+  document.getElementById("letter").style.display = "block";
+  document.getElementById("closeBtn").style.display = "block";
+  document.querySelector(".container").style.display = "none";
+  window.scrollTo({
+    top: document.getElementById("letter").offsetTop,
+    behavior: "smooth"
+  });
+}
+
+function closeTab() {
+  document.getElementById("letter").style.display = "none";
+  document.getElementById("closeBtn").style.display = "none";
+  document.querySelector(".container").style.display = "flex";
+  window.scrollTo({ top: 0, behavior: "smooth" });
+}</script>
